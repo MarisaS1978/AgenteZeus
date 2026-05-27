@@ -11,10 +11,15 @@ Este proyecto implementa un **asistente virtual inteligente** para **Mayorista Z
 El asistente funciona a través de **Telegram** y utiliza un **AI Agent** integrado en **n8n**, capaz de:
 
 ✅ Mantener memoria conversacional
+
 ✅ Validar clientes automáticamente
+
 ✅ Consultar stock de productos
+
 ✅ Respetar reglas comerciales definidas
+
 ✅ Responder utilizando voseo argentino
+
 ✅ Limitar accesos según permisos y contexto
 
 El sistema fue pensado para ofrecer una experiencia similar a la atención humana, pero escalable y disponible 24/7.
