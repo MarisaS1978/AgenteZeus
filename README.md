@@ -1,4 +1,4 @@
-# 🤖 Asistente Virtual Inteligente — Mayorista Zeus
+# 💬 Asistente Virtual Inteligente — Mayorista Zeus
 
 Sistema de atención automatizada desarrollado con **n8n + IA + Telegram**, diseñado para optimizar consultas comerciales, validación de clientes y acceso seguro a información de stock.
 
@@ -28,7 +28,7 @@ El sistema fue pensado para ofrecer una experiencia similar a la atención human
 | n8n                  | Orquestación de flujos y automatizaciones |
 | Telegram Bot API     | Canal de comunicación con clientes        |
 | AI Agent / LLM       | Motor conversacional inteligente          |
-| Window Buffer Memory | Memoria persistente por usuario           |
+| Simple Memory        | Memoria persistente por usuario           |
 | Base de Datos / API  | Consulta de stock y datos comerciales     |
 
 ---
@@ -37,7 +37,8 @@ El sistema fue pensado para ofrecer una experiencia similar a la atención human
 
 ## 📸 Flujo Principal del Agente
 
-![Flujo Principal](Flujo_Agente.jpg)
+![Flujo Agente](./Assets/Flujo%20Agente.jpg)
+
 
 El flujo principal del sistema conecta Telegram con un AI Agent desarrollado en n8n, incorporando:
 
@@ -64,7 +65,7 @@ El flujo principal del sistema conecta Telegram con un AI Agent desarrollado en 
 
 ## 🧩 Flujo RAG (Retrieval-Augmented Generation)
 
-![Flujo RAG](Flujo_RAG.jpg)
+![Flujo RAG](./Assets/Flujo%20RAG.jpg)
 
 El proyecto también incorpora un flujo de preparación documental mediante embeddings y almacenamiento vectorial.
 
@@ -124,7 +125,7 @@ El agente IA funciona como cerebro conversacional del sistema.
 
 ### Memoria Persistente
 
-Se utiliza `Window Buffer Memory` asociada al:
+Se utiliza `Simple Memory` asociada al:
 
 ```js
 {{ $json.message.chat.id }}
@@ -168,20 +169,9 @@ El comportamiento del asistente se controla mediante un **System Prompt** robust
 * Garantizar seguridad conversacional
 
 ### Ejemplo:
+![System Prompt](./Assets/Prompt.jpg)
 
 
-> “Eres el asistente virtual de Mayorista Zeus, ubicado en Quilmes. Utilizas voseo argentino y un tono cercano y profesional.
->
-> Antes de consultar stock, verificás si el usuario es cliente. Si no está validado, brindás únicamente información general e invitás al registro.
->
-> Recordás el estado del usuario durante toda la conversación.
->
-> Horarios:
-> Lunes a Viernes: 7:45 a 16:00
-> Sábados: 7:45 a 12:30
->
-> Medios de pago:
-> Efectivo, Transferencia, Mercado Pago y Cuenta DNI.”
 
 ---
 
@@ -243,6 +233,7 @@ La herramienta `consultar_stock` puede conectarse a:
 * Airtable
 * ERP externos
 
+![Productos](./Assets/Tabla%20Productos.jpg)
 ---
 
 ## 5. Activar el Flujo
@@ -250,7 +241,7 @@ La herramienta `consultar_stock` puede conectarse a:
 Ejecutar el workflow en modo:
 
 ```text
-Production
+Publish
 ```
 
 para mantener el asistente online 24/7.
@@ -351,13 +342,26 @@ Proyecto desarrollado como práctica de automatización e integración de IA apl
 ---
 
 # ⭐ Demo Conceptual
+### Inicio de Conversación
 
-```text
-Cliente: “¿Tenés stock de yerba Playadito?”
+![Inicio](./Assets/conversacion_%20inicio.jpg)
 
-IA:
-“¡Hola! 😊 Antes de consultar stock necesito validar si sos cliente registrado de Mayorista Zeus.”
-```
+### Validación Básica
+
+![Validadcion](./Assets/validacion_basica.jpg)
+
+### Políticas de la Empresa
+
+![Politicas](./Assets/politicas%20de%20empresa.jpg)
+
+### Reacción a preguntas Random
+
+![Random](./Assets/Respuesta%20a%20preguntas%20random.jpg)
+
+### Salida
+
+![Salida](./Assets/salida%20final.jpg)
+
 
 ---
 
